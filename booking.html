@@ -17,10 +17,7 @@
 
         <form id="bookingForm">
             <div class="row1">
-                <!-- <div class="form-group">
-                    <label>ชื่อ (Name)</label>
-                    <input type="text" name="name" required>
-                </div> -->
+        
                 <div class="form-group">
                     <label>เบอร์โทร (Phone)</label>
                     <input type="tel" name="phone" required>
@@ -31,8 +28,8 @@
 
             <div class="form-group">
                 <label>ประเภทรองเท้า (Shoe Type)</label>
-                <select name="shoe_type" id="shoeType" required onchange="calculateTotal()">
-                <!-- <select name="shoe_type" required> -->
+                <!-- <select name="shoe_type" id="shoeType" required onchange="calculateTotal()"> -->
+                <select name="shoe_type" required>
                     <option value="">-- กรุณาเลือก --</option>
                     <option value="sneakers">ร้องเท้าผ้าใบ (Sneakers)</option>
                     <option value="Suede sneakers">ร้องเท้าผ้าใบหนังกลับ (Suede sneakers)</option>
@@ -75,11 +72,6 @@
                 <textarea name="address" rows="3" placeholder="แปะลิงก์ Google Maps หรือที่อยู่จัดส่ง..." required></textarea>
             </div>
 
-           <!-- <div class="form-group">
-                <label>Member ID</label>
-                <input type="text" name="member_id" placeholder='ถ้าไม่มี ให้พิมพ์ "ไม่มี"'>
-            </div> -->
-
             <div class="form-group">
                 <label>Note / หมายเหตุเพิ่มเติม</label>
                 <textarea name="note" rows="2" placeholder="เช่น ขอสะอาดๆ, งานด่วน (Extra Charge)"></textarea>
@@ -105,7 +97,7 @@
             <p class="note-text">*ไฟล์จะถูกเก็บไว้ใน Google Drive ของร้าน</p>
         </div>
         <hr>
-<div class="addon-section">
+<!-- <div class="addon-section">
     <h3 style="font-size:16px; margin-bottom:15px;">บริการเพิ่มเติม (Add-on Services)</h3>
     
     <div class="form-group">
@@ -145,7 +137,7 @@
         <span class="price-text" id="displayTotal">189</span>
         <span style="font-size:18px;">บาท</span>
     </div>
-</div>
+</div> -->
 
         <button type="submit" id="finalSubmit" class="btn-submit">ยืนยันและส่งข้อมูล</button>
         <a href="index.html" style="text-decoration: none; color: #000; font-size: 12px;">← กลับหน้าหลัก</a>
