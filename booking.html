@@ -28,8 +28,8 @@
 
             <div class="form-group">
                 <label>ประเภทรองเท้า (Shoe Type)</label>
-                <!-- <select name="shoe_type" id="shoeType" required onchange="calculateTotal()"> -->
-                <select name="shoe_type" required>
+                <select name="shoe_type" id="shoeType" required onchange="calculateTotal()">
+                <!-- <select name="shoe_type" required> -->
                     <option value="">-- กรุณาเลือก --</option>
                     <option value="sneakers">ร้องเท้าผ้าใบ (Sneakers)</option>
                     <option value="Suede sneakers">ร้องเท้าผ้าใบหนังกลับ (Suede sneakers)</option>
@@ -97,7 +97,7 @@
             <p class="note-text">*ไฟล์จะถูกเก็บไว้ใน Google Drive ของร้าน</p>
         </div>
         <hr>
-<!-- <div class="addon-section">
+<div class="addon-section">
     <h3 style="font-size:16px; margin-bottom:15px;">บริการเพิ่มเติม (Add-on Services)</h3>
     
     <div class="form-group">
@@ -137,7 +137,7 @@
         <span class="price-text" id="displayTotal">189</span>
         <span style="font-size:18px;">บาท</span>
     </div>
-</div> -->
+</div>
 
         <button type="submit" id="finalSubmit" class="btn-submit">ยืนยันและส่งข้อมูล</button>
         <a href="index.html" style="text-decoration: none; color: #000; font-size: 12px;">← กลับหน้าหลัก</a>
@@ -155,53 +155,53 @@
 
         // ... (ตัวแปร scriptURL, form เดิม) ...
 
-// // --- ฟังก์ชันคำนวณราคา ---
-// function calculateTotal() {
-//     let total = 189; // ราคาตั้งต้น
+// --- ฟังก์ชันคำนวณราคา ---
+function calculateTotal() {
+    let total = 189; // ราคาตั้งต้น
 
-//     // 1. เช็คประเภทรองเท้า (ถ้าเป็นหนังกลับ +100)
-//     const shoeType = document.getElementById('shoeType').value;
-//     if (shoeType === 'Suede sneakers') {
-//         total += 100;
-//     }
+    // 1. เช็คประเภทรองเท้า (ถ้าเป็นหนังกลับ +100)
+    const shoeType = document.getElementById('shoeType').value;
+    if (shoeType === 'Suede sneakers') {
+        total += 100;
+    }
 
-//     // 2. เช็คความด่วน (Radio Button)
-//     const speedRadios = document.getElementsByName('service_speed');
-//     for (const radio of speedRadios) {
-//         if (radio.checked) {
-//             total += parseInt(radio.value);
-//             break; 
-//         }
-//     }
+    // 2. เช็คความด่วน (Radio Button)
+    const speedRadios = document.getElementsByName('service_speed');
+    for (const radio of speedRadios) {
+        if (radio.checked) {
+            total += parseInt(radio.value);
+            break; 
+        }
+    }
 
-//     // 3. เช็คบริการเสริม (Checkbox)
-//     const chkYellow = document.getElementById('chk_yellow');
-//     const chkOzone = document.getElementById('chk_ozone');
+    // 3. เช็คบริการเสริม (Checkbox)
+    const chkYellow = document.getElementById('chk_yellow');
+    const chkOzone = document.getElementById('chk_ozone');
 
-//     if (chkYellow.checked) total += 299;
-//     if (chkOzone.checked) total += 129;
+    if (chkYellow.checked) total += 299;
+    if (chkOzone.checked) total += 129;
 
-//     // อัปเดตตัวเลขในหน้าจอ
-//     document.getElementById('displayTotal').innerText = total.toLocaleString(); // ใส่ลูกน้ำหลักพัน
+    // อัปเดตตัวเลขในหน้าจอ
+    document.getElementById('displayTotal').innerText = total.toLocaleString(); // ใส่ลูกน้ำหลักพัน
     
-//     return total; // ส่งค่ากลับไปใช้ตอนกดจ่ายเงิน
-// }
+    return total; // ส่งค่ากลับไปใช้ตอนกดจ่ายเงิน
+}
 
-// // อัปเดต Event Listener ของปุ่ม "ดำเนินการชำระเงิน"
-// document.getElementById('openPayment').addEventListener('click', () => {
-//     if(form.checkValidity()) { 
-//         // คำนวณราคาสุดท้ายอีกครั้ง
-//         const finalPrice = calculateTotal();
+// อัปเดต Event Listener ของปุ่ม "ดำเนินการชำระเงิน"
+document.getElementById('openPayment').addEventListener('click', () => {
+    if(form.checkValidity()) { 
+        // คำนวณราคาสุดท้ายอีกครั้ง
+        const finalPrice = calculateTotal();
         
-//         // (Optional) แสดงยอดเงินใน Modal เพื่อย้ำลูกค้า
-//         // คุณอาจต้องเพิ่ม <p id="modalPrice">...</p> ใน Modal HTML ก่อน
-//         // document.getElementById('modalPrice').innerText = "ยอดโอน: " + finalPrice + " บาท";
+        // (Optional) แสดงยอดเงินใน Modal เพื่อย้ำลูกค้า
+        // คุณอาจต้องเพิ่ม <p id="modalPrice">...</p> ใน Modal HTML ก่อน
+        // document.getElementById('modalPrice').innerText = "ยอดโอน: " + finalPrice + " บาท";
 
-//         paymentModal.style.display = 'flex'; 
-//     } else { 
-//         form.reportValidity(); 
-//     }
-// });
+        paymentModal.style.display = 'flex'; 
+    } else { 
+        form.reportValidity(); 
+    }
+});
 
 // ... (ส่วน submit form เหมือนเดิม) ...
 
@@ -227,5 +227,6 @@
     </script>
 </body>
 </html>
+
 
 
